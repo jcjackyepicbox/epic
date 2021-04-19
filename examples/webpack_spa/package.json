@@ -1,0 +1,106 @@
+{
+  "name": "spa",
+  "version": "1.0.0",
+  "private": true,
+  "epicTemplate": true,
+  "scripts": {
+    "build": "webpack --config ./webpack/prod.js --env=production",
+    "build:test": "webpack --config ./webpack/prod.js --env=test",
+    "build:dev": "webpack --config ./webpack/prod.js --env=development",
+    "build:production": "yarn build",
+    "build:uat": "webpack --config ./webpack/prod.js --env=uat",
+    "test": "NODE_ENV=test jest --watchAll",
+    "test:coverage": "NODE_ENV=test jest --watch=false --coverage",
+    "profile:dev": "webpack --config ./webpack/profile.js --env=development",
+    "profile:uat": "webpack --config ./webpack/profile.js --env=uat",
+    "profile:test": "webpack --config ./webpack/profile.js --env=test",
+    "profile:prod": "webpack --config ./webpack/profile.js --env=production",
+    "start": "webpack-dev-server --host localhost --config ./webpack/dev.js --env=development",
+    "start:net": "webpack-dev-server --host 0.0.0.0 --config ./webpack/dev.js --env=development",
+    "eslint": "eslint --ext .ts --ext .tsx src",
+    "profile:stats": "webpack --config ./webpack/prod.js --env=production --json > stats.json"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@types/jest": "^26.0.14",
+    "@types/react": "^16.9.50",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
+    "babel-jest": "^26.6.0",
+    "babel-loader": "^8.1.0",
+    "browserslist": "^4.14.5",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.2.0",
+    "css-loader": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^3.0.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.3",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "file-loader": "^6.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.0",
+    "jest": "^26.5.0",
+    "jest-watch-typeahead": "^0.6.1",
+    "lint-staged": "^10.4.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.1.1",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-loader": "^4.0.3",
+    "postcss-normalize": "^9.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.1.2",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^4.2.2",
+    "typescript": "^4.0.3",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^3.9.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dashboard": "^3.2.1",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "puppeteer": "^5.5.0",
+    "puppeteer-core": "^5.5.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:coverage && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md,ts,tsx,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

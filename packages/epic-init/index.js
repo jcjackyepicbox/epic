@@ -30,8 +30,6 @@ async function init() {
     (val) => val.value === template_type
   )[0];
 
-  console.log(chosenTemplate);
-
   readAndCopyFileFromDirectory(
     path.resolve(__dirname, 'templates', chosenTemplate.folderName),
     () => {

@@ -6,9 +6,13 @@
     "examples/*"
   ],
   "dependencies": {
+    "chalk": "^4.1.0",
+    "fs-extra": "^9.1.0",
+    "inquirer": "^8.0.0",
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "sync": "node ./scripts/sync.js"
   }
 }
