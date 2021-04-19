@@ -6,7 +6,7 @@ function getCurrentDirectoryBase() {
 }
 
 function readAndCopyFileFromDirectory(pathDir, callback) {
-  fse.copy(pathDir, '', (err) => {
+  fse.copy(pathDir, '.', (err) => {
     if (err) console.error(err);
     callback();
   });

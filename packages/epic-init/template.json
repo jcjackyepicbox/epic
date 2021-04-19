@@ -3,7 +3,7 @@
     {
       "id": "webpack_spa",
       "name": "Webpack SPA (default)",
-      "value": "wp_spa_default",
+      "value": "default",
       "folderName": "webpack_spa"
     }
   ]
