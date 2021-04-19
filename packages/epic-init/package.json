@@ -13,5 +13,6 @@
     "fs-extra": "^9.1.0",
     "inquirer": "^8.0.0",
     "yargs": "^16.2.0"
-  }
+  },
+  "gitHead": "e58a252e3c9ef8a0fdfa1beb7fcf1b28c7509cb0"
 }

@@ -18,7 +18,7 @@ async function init() {
     chalk.green(getCurrentDirectoryBase())
   );
 
-  // const promptObj = await promptQuestion(templateJson.promptQuestion);
+  const promptObj = await promptQuestion(templateJson.promptQuestion);
 }
 
 init();
