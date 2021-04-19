@@ -1,11 +1,11 @@
 {
   "name": "@epic-form/epic-init",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "main": "index.js",
   "bin": {
     "epic-init": "index.js"
   },
-  "license": "",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
     "ejs": "^3.1.6",
@@ -14,5 +14,5 @@
     "inquirer": "^8.0.0",
     "yargs": "^16.2.0"
   },
-  "gitHead": "e58a252e3c9ef8a0fdfa1beb7fcf1b28c7509cb0"
+  "gitHead": "e0e7f784e7d788f6407b2506d925bd4c97548671"
 }
