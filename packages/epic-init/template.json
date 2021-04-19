@@ -1,0 +1,10 @@
+{
+  "promptQuestion": [
+    {
+      "id": "webpack_spa",
+      "name": "Webpack SPA (default)",
+      "value": "wp_spa_default",
+      "folderName": "webpack_spa"
+    }
+  ]
+}
