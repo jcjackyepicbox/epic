@@ -1,6 +1,6 @@
 {
   "name": "@epic-form/epic-init",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "bin": {
     "epic-init": "index.js"
