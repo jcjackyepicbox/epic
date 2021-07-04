@@ -45,7 +45,7 @@ async function init() {
       );
 
       console.log();
-      console.log(chalk.yellowBright('Start Your Journey Ahead!'));
+      console.log(chalk.yellowBright('Start Your Journey!'));
       console.log(chalk.cyanBright('> yarn'));
       console.log(chalk.cyanBright('> yarn start'));
       console.log();
