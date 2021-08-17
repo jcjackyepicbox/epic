@@ -1,6 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const postcssNormalize = require('postcss-normalize');
 
 exports.extractCSS = ({ options = {}, filename = '[name].css' } = {}) => {
   return {

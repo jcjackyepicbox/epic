@@ -12,9 +12,14 @@ const envFile = {
  * @param {development | test | uat | productioin} env specify env defined in you webpack config paramater
  * @description get env file name
  */
-function getCurrentEnvFile(env) {
-  const currentEnvFile = envFile[env] || envFile.test;
-  return currentEnvFile;
+function getCurrentEnvFile(param) {
+  Object.keys(envFile).forEach((env) => {
+    if (param[env]) {
+      return envFile[env];
+    }
+  });
+
+  return envFile.development;
 }
 
 /**

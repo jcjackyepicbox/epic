@@ -23,10 +23,10 @@ const webpackDev = {
   },
 };
 
-module.exports = (env) =>
+module.exports = (param) =>
   merge(
     webpackDev,
-    webpackCommon(env),
+    webpackCommon(param),
     loaders.extractCSS(),
     loaders.loadFiles({
       options: {

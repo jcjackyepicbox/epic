@@ -1,0 +1,9 @@
+{
+  "name": "@epic-form/epic-dev-utils",
+  "version": "0.0.1",
+  "description": "Development utilities",
+  "license": "MIT",
+  "files": [
+    "env.js"
+  ]
+}

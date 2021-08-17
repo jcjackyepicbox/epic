@@ -2,10 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const { getCurrentEnvFile } = require('./env');
+const { getCurrentEnvFile } = require('@epic-form/epic-dev-utils/env');
 
-module.exports = (env) => {
-  const currentEnvFile = getCurrentEnvFile(env);
+module.exports = (param) => {
+  const currentEnvFile = getCurrentEnvFile(param);
   return {
     entry: path.resolve(__dirname, '..', 'src', 'index.tsx'),
     resolve: {
