@@ -5,7 +5,7 @@ const webpackCommon = require('./common');
 const loaders = require('./loaders');
 const TerserPlugin = require('terser-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { getPublicPathEnv, getCurrentEnvFile } = require('./env');
 
 const webpackProd = (env) => {
@@ -13,7 +13,6 @@ const webpackProd = (env) => {
   const pathEnvFile = path.resolve(__dirname, '..', currentEnvFile);
   const publicPathURL = getPublicPathEnv(pathEnvFile);
 
-  console.log(publicPathURL);
   return {
     mode: 'production',
     output: {
@@ -23,7 +22,18 @@ const webpackProd = (env) => {
     },
     plugins: [
       new copyWebpackPlugin({
-        patterns: [{ from: 'public', to: '.' }],
+        patterns: [
+          {
+            from: 'public',
+            to: '.',
+            globOptions: {
+              ignore: [
+                // Ignore all `txt` files
+                '**/*index.html',
+              ],
+            },
+          },
+        ],
       }),
     ],
     optimization: {
@@ -77,9 +87,8 @@ const webpackProd = (env) => {
               ascii_only: true,
             },
           },
-          sourceMap: false,
         }),
-        new OptimizeCssAssetsPlugin({}),
+        new CssMinimizerPlugin(),
       ],
     },
   };
