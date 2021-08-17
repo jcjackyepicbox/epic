@@ -14,7 +14,9 @@ const envFile = {
  */
 function getCurrentEnvFile(param) {
   Object.keys(envFile).forEach((env) => {
-    if (param[env]) return envFile[env];
+    if (param[env]) {
+      return envFile[env];
+    }
   });
 
   return envFile.development;
