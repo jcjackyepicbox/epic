@@ -13,7 +13,9 @@ const envFile = {
  * @description get env file name
  */
 function getCurrentEnvFile(param) {
+  console.log('[EPIC/ENV]:', param);
   Object.keys(envFile).forEach((env) => {
+    console.log('[EPIC/ENV]:', env, param[env]);
     if (param[env]) {
       return envFile[env];
     }
