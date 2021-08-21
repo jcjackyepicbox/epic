@@ -13,15 +13,17 @@ const envFile = {
  * @description get env file name
  */
 function getCurrentEnvFile(param) {
-  console.log('[EPIC/ENV]:', param);
-  Object.keys(envFile).forEach((env) => {
-    console.log('[EPIC/ENV]:', env, param[env]);
+  let envPath = envFile.development;
+  Object.keys(envFile).every((env) => {
     if (param[env]) {
-      return envFile[env];
+      envPath = envFile[env];
+      return false;
     }
+
+    return true;
   });
 
-  return envFile.development;
+  return envPath;
 }
 
 /**
