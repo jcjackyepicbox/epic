@@ -5,6 +5,12 @@
       "name": "Webpack SPA (default)",
       "value": "default",
       "folderName": "webpack_spa"
+    },
+    {
+      "id": "static_site_jc",
+      "name": "Static Site React",
+      "value": "static_site",
+      "folderName": "static-site-jc"
     }
   ]
 }
